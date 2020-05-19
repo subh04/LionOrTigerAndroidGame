@@ -97,6 +97,12 @@ public class MainActivity extends AppCompatActivity {
            }
        }
 
+       if(gridLay.getChildCount()==9){
+           Toast.makeText(getApplicationContext(),"draw",Toast.LENGTH_SHORT).show();
+           btnReset.setVisibility(View.VISIBLE);
+       }
+
+
    }
    //Reset Game Function
     private void resetTheGame(){
