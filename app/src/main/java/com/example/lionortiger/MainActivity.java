@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                    if (currentPlayer == Player.one) {
                        Toast.makeText(getApplicationContext(), "Player 2 is the winner",
                                Toast.LENGTH_LONG).show();
-                   } else {
+                   } else if (currentPlayer==Player.two){
                        Toast.makeText(getApplicationContext(),
                                "Player 1 is the winner", Toast.LENGTH_LONG).show();
 
@@ -96,11 +96,11 @@ public class MainActivity extends AppCompatActivity {
                }
            }
        }
+//       if(gridLay.getChildCount()==9){
+//           //Toast.makeText(getApplicationContext(),"draw",Toast.LENGTH_SHORT).show();
+//           btnReset.setVisibility(View.VISIBLE);
+//       }
 
-       if(gridLay.getChildCount()==9){
-           Toast.makeText(getApplicationContext(),"draw",Toast.LENGTH_SHORT).show();
-           btnReset.setVisibility(View.VISIBLE);
-       }
 
 
    }
