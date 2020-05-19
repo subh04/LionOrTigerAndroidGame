@@ -155,16 +155,13 @@
         android:id="@+id/btnReset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="144dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:layout_marginBottom="24dp"
         android:background="@android:color/holo_orange_light"
         android:text="Reset Game"
         android:textColor="@color/colorPrimaryDark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.975"
+        app:layout_constraintHorizontal_bias="0.854"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gridLay" />
+        app:layout_constraintTop_toBottomOf="@+id/gridLay"
+        app:layout_constraintVertical_bias="0.763" />
 </androidx.constraintlayout.widget.ConstraintLayout>

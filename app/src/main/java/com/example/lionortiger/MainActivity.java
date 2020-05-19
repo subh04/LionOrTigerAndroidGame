@@ -1,6 +1,7 @@
 package com.example.lionortiger;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.gridlayout.widget.GridLayout;
 
 import android.os.Bundle;
 import android.view.View;
@@ -22,19 +23,35 @@ public class MainActivity extends AppCompatActivity {
 
     private Button btnReset;
 
+    private GridLayout gridLay;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        playerChoices[0]=Player.no;
-        playerChoices[1]=Player.no;
-        playerChoices[2]=Player.no;
-        playerChoices[3]=Player.no;
-        playerChoices[4]=Player.no;
-        playerChoices[5]=Player.no;
-        playerChoices[6]=Player.no;
-        playerChoices[7]=Player.no;
-        playerChoices[8]=Player.no;
+//        playerChoices[0]=Player.no;
+//        playerChoices[1]=Player.no;
+//        playerChoices[2]=Player.no;
+//        playerChoices[3]=Player.no;
+//        playerChoices[4]=Player.no;
+//        playerChoices[5]=Player.no;
+//        playerChoices[6]=Player.no;
+//        playerChoices[7]=Player.no;
+//        playerChoices[8]=Player.no;
+        for(int i=0;i<playerChoices.length;i++){
+            playerChoices[i]=Player.no;
+        }
+
+        btnReset=findViewById(R.id.btnReset);
+        gridLay=findViewById(R.id.gridLay);
+        btnReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                resetTheGame();
+
+            }
+        });
     }
    public void imageViewIsTapped(View imageView){   //THE IMAGE TAPPED IS THE imageView
        ImageView tappedImageView= (ImageView) imageView;  //ImageView is sub class of view
@@ -46,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
            playerChoices[tappedImageViewTag] = currentPlayer;
 
-           gameOver=true;
+
 
            if (currentPlayer == Player.one) {
                tappedImageView.setImageResource(R.drawable.tiger);
@@ -64,6 +81,9 @@ public class MainActivity extends AppCompatActivity {
                        && playerChoices[winnerColumns[1]] == playerChoices[winnerColumns[2]]
                        && playerChoices[winnerColumns[0]] != Player.no) {
 
+                   gameOver=true;
+                   btnReset.setVisibility(View.VISIBLE);
+
                    if (currentPlayer == Player.one) {
                        Toast.makeText(getApplicationContext(), "Player 2 is the winner",
                                Toast.LENGTH_LONG).show();
@@ -78,4 +98,31 @@ public class MainActivity extends AppCompatActivity {
        }
 
    }
+   //Reset Game Function
+    private void resetTheGame(){
+
+        for (int index=0;index<gridLay.getChildCount();index++){
+            ImageView imageView=(ImageView) gridLay.getChildAt(index);
+            imageView.setImageDrawable(null);
+        }
+        currentPlayer=Player.one;
+
+        for(int i=0;i<playerChoices.length;i++){
+            playerChoices[i]=Player.no;
+        }
+
+//        playerChoices[0]=Player.no;
+//        playerChoices[1]=Player.no;
+//        playerChoices[2]=Player.no;
+//        playerChoices[3]=Player.no;
+//        playerChoices[4]=Player.no;
+//        playerChoices[5]=Player.no;
+//        playerChoices[6]=Player.no;
+//        playerChoices[7]=Player.no;
+//        playerChoices[8]=Player.no;
+        gameOver=false;
+        btnReset.setVisibility(View.INVISIBLE);
+
+
+    }
 }
