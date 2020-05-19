@@ -105,13 +105,17 @@ public class MainActivity extends AppCompatActivity {
            }
        }
 
-       boolean flag=false;
+       boolean flag=true;
        for(int k=0;k<playerChoices.length;k++){
-           if(playerChoices[k]==Player.no){
-               flag=true;
+           if(playerChoices[k]!=Player.no){
+               flag=false;
            }
 
 
+       }
+       if(flag==true) {
+           Toast.makeText(getApplicationContext(), "draw", Toast.LENGTH_SHORT).show();
+           resetTheGame();
        }
 
 //
