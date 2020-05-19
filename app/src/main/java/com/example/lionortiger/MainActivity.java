@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
    public void imageViewIsTapped(View imageView){   //THE IMAGE TAPPED IS THE imageView
+       //Toast.makeText(getApplicationContext(), gridLay.getChildCount()+"", Toast.LENGTH_SHORT).show();
        ImageView tappedImageView= (ImageView) imageView;  //ImageView is sub class of view
        int tappedImageViewTag=Integer.parseInt(tappedImageView.getTag().toString());
 
@@ -96,10 +97,10 @@ public class MainActivity extends AppCompatActivity {
                }
            }
        }
-//       if(gridLay.getChildCount()==9){
-//           //Toast.makeText(getApplicationContext(),"draw",Toast.LENGTH_SHORT).show();
-//           btnReset.setVisibility(View.VISIBLE);
-//       }
+       if(gridLay.getChildCount()==9){
+           //Toast.makeText(getApplicationContext(),"draw",Toast.LENGTH_SHORT).show();
+           btnReset.setVisibility(View.VISIBLE);
+       }
 
 
 
@@ -127,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
 //        playerChoices[7]=Player.no;
 //        playerChoices[8]=Player.no;
         gameOver=false;
-        btnReset.setVisibility(View.INVISIBLE);
+        //btnReset.setVisibility(View.INVISIBLE);
 
 
     }

@@ -158,7 +158,7 @@
         android:background="@android:color/holo_orange_light"
         android:text="Reset Game"
         android:textColor="@color/colorPrimaryDark"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.854"
