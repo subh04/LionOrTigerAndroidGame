@@ -1,8 +1,10 @@
 package com.example.lionortiger;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.gridlayout.widget.GridLayout;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -24,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     private Button btnReset;
 
     private GridLayout gridLay;
+//    private ImageView img1;
+//    private ImageView img2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +48,9 @@ public class MainActivity extends AppCompatActivity {
 
         btnReset=findViewById(R.id.btnReset);
         gridLay=findViewById(R.id.gridLay);
+        //img1=(ImageView) ContextCompat.getDrawable(getApplicationContext(), R.drawable.lion);
+        //img2=ContextCompat.getDrawable(getApplicationContext(), R.drawable.tiger);
+
         btnReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -97,10 +104,26 @@ public class MainActivity extends AppCompatActivity {
                }
            }
        }
-       if(gridLay.getChildCount()==9){
-           //Toast.makeText(getApplicationContext(),"draw",Toast.LENGTH_SHORT).show();
-           btnReset.setVisibility(View.VISIBLE);
+
+       boolean flag=false;
+       for(int k=0;k<playerChoices.length;k++){
+           if(playerChoices[k]==Player.no){
+               flag=true;
+           }
+
+
        }
+
+//
+//
+//
+//
+//       for(int j=0;j<9;j++) {
+//           if (gridLay.getChildAt(j) ==img1) {
+//               //Toast.makeText(getApplicationContext(),"draw",Toast.LENGTH_SHORT).show();
+//               btnReset.setVisibility(View.VISIBLE);
+//           }
+//       }
 
 
 
